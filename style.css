@@ -1,0 +1,924 @@
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+button {
+
+    padding: 16px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ffd43b;
+
+    color: #3b2f00;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 212, 59, 0.6);
+
+}
+
+
+
+/* =================================
+   INICIO
+================================= */
+
+.inicio {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #49345c,
+            #1b1725 65%
+        );
+
+}
+
+
+.corazon {
+
+    font-size: 75px;
+
+    margin-bottom: 20px;
+
+    animation:
+        latido 1.5s infinite;
+
+}
+
+
+@keyframes latido {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+.inicio h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.inicio p {
+
+    max-width: 550px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+/* =================================
+   JARDÍN
+================================= */
+
+.jardin {
+
+    display: none;
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding-top: 70px;
+
+    background:
+
+        linear-gradient(
+            #171426,
+            #30243b
+        );
+
+}
+
+
+.jardin h2 {
+
+    position: relative;
+
+    z-index: 10;
+
+    color: #ffd43b;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.mensaje {
+
+    position: relative;
+
+    z-index: 10;
+
+    font-size: 18px;
+
+    opacity: 0.9;
+
+}
+
+
+.flor {
+
+    position: absolute;
+
+    transform: scale(0);
+
+    animation:
+        crecer 1.5s ease forwards;
+
+    filter:
+
+        drop-shadow(
+            0 0 10px
+            rgba(255, 212, 59, 0.5)
+        );
+
+}
+
+
+@keyframes crecer {
+
+    0% {
+
+        transform:
+            scale(0)
+            translateY(100px);
+
+        opacity: 0;
+
+    }
+
+
+    60% {
+
+        transform:
+            scale(1.2)
+            translateY(-10px);
+
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.botonCarta {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 20;
+
+}
+
+
+.botonCarta:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+
+}
+
+
+
+/* =================================
+   CARTA
+================================= */
+
+.cartaSeccion {
+
+    display: none;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding-top: 60px;
+
+    background:
+
+        linear-gradient(
+            #20172b,
+            #49344c
+        );
+
+}
+
+
+.sobre {
+
+    position: relative;
+
+    width: 330px;
+
+    height: 230px;
+
+    margin: 70px auto 0;
+
+    cursor: pointer;
+
+}
+
+
+.sobre::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #e7b938;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.4);
+
+    z-index: 1;
+
+}
+
+
+.tapa {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        165px solid transparent;
+
+    border-right:
+        165px solid transparent;
+
+    border-top:
+        120px solid #f3cf4a;
+
+    z-index: 4;
+
+    transform-origin: top;
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.carta {
+
+    position: absolute;
+
+    width: 290px;
+
+    min-height: 330px;
+
+    left: 20px;
+
+    top: 15px;
+
+    padding: 30px 25px;
+
+    background: #fff8df;
+
+    color: #4a3820;
+
+    border-radius: 5px;
+
+    z-index: 2;
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.carta h2 {
+
+    color: #b88700;
+
+    margin-bottom: 20px;
+
+    font-size: 24px;
+
+}
+
+
+.carta p {
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+
+}
+
+
+.firma {
+
+    margin-top: 25px;
+
+    font-weight: bold;
+
+    color: #b88700;
+
+}
+
+
+.sobre.abierto .tapa {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.sobre.abierto .carta {
+
+    transform:
+        translateY(-170px);
+
+    z-index: 5;
+
+}
+
+
+.instruccion {
+
+    margin-top: 35px;
+
+    opacity: 0.8;
+
+}
+
+
+.botonContinuar {
+
+    margin-top: 30px;
+
+}
+
+
+
+/* =================================
+   MENSAJES
+================================= */
+
+.mensajesSeccion {
+
+    display: none;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 80px 25px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #49345c,
+            #171426
+        );
+
+}
+
+
+.mensajesSeccion h2 {
+
+    font-size: 32px;
+
+    color: #ffd43b;
+
+    margin-bottom: 70px;
+
+}
+
+
+.mensajeGrande {
+
+    min-height: 130px;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 28px;
+
+    line-height: 1.6;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation:
+        aparecerMensaje 0.8s ease;
+
+}
+
+
+@keyframes aparecerMensaje {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+
+/* =================================
+   ESCENA FINAL
+================================= */
+
+.final {
+
+    display: none;
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding: 90px 25px;
+
+    background:
+
+        radial-gradient(
+            circle at 70% 20%,
+            #35305c,
+            #090812 65%
+        );
+
+}
+
+
+.final h2 {
+
+    position: relative;
+
+    z-index: 20;
+
+    font-size: 36px;
+
+    color: #ffd43b;
+
+    margin-bottom: 25px;
+
+}
+
+
+.final > p {
+
+    position: relative;
+
+    z-index: 20;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+
+.luna {
+
+    position: absolute;
+
+    top: 50px;
+
+    right: 12%;
+
+    font-size: 70px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255,255,255,0.4)
+        );
+
+}
+
+
+.florFinal {
+
+    position: absolute;
+
+    bottom: -10px;
+
+    font-size: 45px;
+
+    animation:
+
+        movimientoFlor
+        3s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes movimientoFlor {
+
+    from {
+
+        transform:
+            rotate(-5deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(5deg);
+
+    }
+
+}
+
+
+#botonSecreto {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 30;
+
+}
+
+
+#botonSecreto:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+
+}
+
+
+
+/* =================================
+   PÉTALOS
+================================= */
+
+.petalo {
+
+    position: absolute;
+
+    top: -30px;
+
+    font-size: 22px;
+
+    animation:
+        caer linear forwards;
+
+}
+
+
+@keyframes caer {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =================================
+   SECRETO
+================================= */
+
+.secreto {
+
+    display: none;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 60px 25px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #4a3154,
+            #110d18
+        );
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.secretoContenido {
+
+    max-width: 650px;
+
+}
+
+
+.granCorazon {
+
+    font-size: 100px;
+
+    animation:
+        latido 1.5s infinite;
+
+    margin-bottom: 20px;
+
+}
+
+
+.secreto h2 {
+
+    font-size: 34px;
+
+    color: #ffd43b;
+
+    margin-bottom: 25px;
+
+}
+
+
+.secreto p {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+
+.mensajeFinal {
+
+    margin-top: 25px;
+
+    font-size: 22px !important;
+
+}
+
+
+.floresSecretas {
+
+    margin-top: 30px;
+
+    font-size: 45px;
+
+}
+
+
+
+/* =================================
+   MÓVIL
+================================= */
+
+@media (max-width: 600px) {
+
+
+    .inicio h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .inicio p {
+
+        font-size: 17px;
+
+    }
+
+
+    .jardin h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .flor {
+
+        font-size: 45px;
+
+    }
+
+
+    .sobre {
+
+        width: 300px;
+
+        height: 210px;
+
+    }
+
+
+    .tapa {
+
+        border-left-width: 150px;
+
+        border-right-width: 150px;
+
+        border-top-width: 110px;
+
+    }
+
+
+    .carta {
+
+        width: 265px;
+
+        left: 17px;
+
+        min-height: 330px;
+
+        padding: 25px 20px;
+
+    }
+
+
+    .mensajeGrande {
+
+        font-size: 22px;
+
+    }
+
+
+    .mensajesSeccion h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .final h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .final > p {
+
+        font-size: 17px;
+
+    }
+
+
+    .luna {
+
+        right: 7%;
+
+        font-size: 50px;
+
+    }
+
+}
