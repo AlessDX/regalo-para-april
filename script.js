@@ -217,9 +217,18 @@ sobre.addEventListener(
         ) {
 
             instruccion.textContent =
-                "Hay algo dentro para ti... 💛";
+                "La preparé especialmente para ti... 💛";
 
             botonContinuar.classList.add(
+                "visible"
+            );
+
+        } else {
+
+            instruccion.textContent =
+                "Toca el sobre para abrirlo 💌";
+
+            botonContinuar.classList.remove(
                 "visible"
             );
 
