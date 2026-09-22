@@ -23,6 +23,9 @@ const cartaSeccion =
 const sobre =
     document.getElementById("sobre");
 
+const instruccion =
+    document.getElementById("instruccion");
+
 const botonContinuar =
     document.getElementById("botonContinuar");
 
@@ -34,6 +37,9 @@ const mensajeGrande =
 
 const botonMensaje =
     document.getElementById("botonMensaje");
+
+const contador =
+    document.getElementById("contador");
 
 const final =
     document.getElementById("final");
@@ -68,20 +74,22 @@ botonComenzar.addEventListener(
 
         crearFlores();
 
+        crearBrillos();
+
     }
 );
 
 
 
 // =================================
-// CREAR FLORES DEL JARDÍN
+// CREAR FLORES
 // =================================
 
 function crearFlores() {
 
     for (
         let i = 0;
-        i < 15;
+        i < 18;
         i++
     ) {
 
@@ -94,21 +102,75 @@ function crearFlores() {
             "🌻";
 
         flor.style.left =
-            Math.random() * 85 + "%";
+            Math.random() * 90 + "%";
 
         flor.style.bottom =
-            Math.random() * 10 + "%";
+            Math.random() * 12 + "%";
 
         flor.style.animationDelay =
             Math.random() * 2 + "s";
 
         const tamaño =
-            40 + Math.random() * 30;
+            38 + Math.random() * 35;
 
         flor.style.fontSize =
             tamaño + "px";
 
         flores.appendChild(flor);
+
+    }
+
+}
+
+
+
+// =================================
+// BRILLOS
+// =================================
+
+function crearBrillos() {
+
+    const contenedor =
+        document.getElementById(
+            "brillosJardin"
+        );
+
+    for (
+        let i = 0;
+        i < 25;
+        i++
+    ) {
+
+        const brillo =
+            document.createElement("div");
+
+        brillo.textContent =
+            "✨";
+
+        brillo.style.position =
+            "absolute";
+
+        brillo.style.left =
+            Math.random() * 100 + "%";
+
+        brillo.style.top =
+            Math.random() * 90 + "%";
+
+        brillo.style.fontSize =
+            10 + Math.random() * 15 + "px";
+
+        brillo.style.opacity =
+            0.3 + Math.random() * 0.7;
+
+        brillo.style.animation =
+            "aparecerBrillo 2s infinite alternate";
+
+        brillo.style.animationDelay =
+            Math.random() * 3 + "s";
+
+        contenedor.appendChild(
+            brillo
+        );
 
     }
 
@@ -147,13 +209,29 @@ sobre.addEventListener(
             "abierto"
         );
 
+
+        if (
+            sobre.classList.contains(
+                "abierto"
+            )
+        ) {
+
+            instruccion.textContent =
+                "Hay algo dentro para ti... 💛";
+
+            botonContinuar.classList.add(
+                "visible"
+            );
+
+        }
+
     }
 );
 
 
 
 // =================================
-// CONTINUAR DESDE LA CARTA
+// CONTINUAR
 // =================================
 
 botonContinuar.addEventListener(
@@ -165,6 +243,8 @@ botonContinuar.addEventListener(
 
         mensajesSeccion.style.display =
             "block";
+
+        numeroMensaje = 0;
 
         mostrarMensaje();
 
@@ -213,6 +293,11 @@ function mostrarMensaje() {
     mensajeGrande.textContent =
         mensajes[numeroMensaje];
 
+    contador.textContent =
+        (numeroMensaje + 1)
+        + " / "
+        + mensajes.length;
+
 }
 
 
@@ -227,6 +312,7 @@ botonMensaje.addEventListener(
 
         numeroMensaje++;
 
+
         if (
             numeroMensaje >=
             mensajes.length
@@ -237,6 +323,7 @@ botonMensaje.addEventListener(
             return;
 
         }
+
 
         mostrarMensaje();
 
@@ -266,14 +353,14 @@ function mostrarFinal() {
 
 
 // =================================
-// CREAR MUCHAS FLORES
+// FLORES FINALES
 // =================================
 
 function crearFloresFinales() {
 
     for (
         let i = 0;
-        i < 35;
+        i < 40;
         i++
     ) {
 
@@ -291,7 +378,7 @@ function crearFloresFinales() {
             Math.random() * 95 + "%";
 
         flor.style.fontSize =
-            30 + Math.random() * 35 + "px";
+            28 + Math.random() * 38 + "px";
 
         flor.style.animationDelay =
             Math.random() * 3 + "s";
@@ -314,7 +401,7 @@ function iniciarLluviaPetalos() {
 
     setInterval(
         crearPetalo,
-        350
+        280
     );
 
 }
@@ -331,7 +418,9 @@ function crearPetalo() {
     );
 
     petalo.textContent =
-        "💛";
+        Math.random() > 0.5
+        ? "💛"
+        : "✨";
 
     petalo.style.left =
         Math.random() * 100 + "%";
@@ -374,5 +463,63 @@ botonSecreto.addEventListener(
         secreto.style.display =
             "flex";
 
+        lanzarCorazones();
+
     }
 );
+
+
+
+// =================================
+// CORAZONES FINALES
+// =================================
+
+function lanzarCorazones() {
+
+    for (
+        let i = 0;
+        i < 20;
+        i++
+    ) {
+
+        const corazon =
+            document.createElement("div");
+
+        corazon.textContent =
+            "💛";
+
+        corazon.style.position =
+            "absolute";
+
+        corazon.style.left =
+            Math.random() * 100 + "%";
+
+        corazon.style.bottom =
+            "-30px";
+
+        corazon.style.fontSize =
+            15 + Math.random() * 25 + "px";
+
+        corazon.style.zIndex =
+            "3";
+
+        corazon.style.animation =
+            "subirCorazon 4s linear forwards";
+
+        secreto.appendChild(
+            corazon
+        );
+
+
+        setTimeout(
+            function () {
+
+                corazon.remove();
+
+            },
+            4500
+        );
+
+    }
+
+}
