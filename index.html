@@ -12,7 +12,10 @@
 
     <title>Para April 💛</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -20,50 +23,43 @@
 <body>
 
 
-    <!-- =================================
-         PANTALLA INICIAL
-    ================================== -->
+    <!-- ================================
+         INICIO
+    ================================= -->
 
-    <main class="inicio" id="inicio">
+    <section class="inicio" id="inicio">
 
-        <div class="estrellas"></div>
+        <div class="brilloInicio"></div>
 
-        <div class="corazon">
-            💛
-        </div>
-
-        <p class="pequeno">
-            Para alguien muy especial...
-        </p>
+        <div class="corazon">💛</div>
 
         <h1>
-            Tengo algo para ti
+            Para alguien<br>
+            muy especial...
         </h1>
 
         <p class="intro">
-
-            Preparé un pequeño lugar
-            solo para ti.
-
+            Tengo algo preparado para ti.
         </p>
 
-        <button id="botonComenzar">
+        <p class="subIntro">
+            Un pequeño lugar creado solamente para ti.
+        </p>
 
+        <button
+            class="boton botonInicio"
+            id="botonInicio"
+        >
             Abrir mi regalo 💛
-
         </button>
 
-        <div class="brillo">
-            ✨
-        </div>
-
-    </main>
+    </section>
 
 
 
-    <!-- =================================
+    <!-- ================================
          JARDÍN
-    ================================== -->
+    ================================= -->
 
     <section
         class="jardin"
@@ -73,41 +69,39 @@
         <div id="brillosJardin"></div>
 
         <h2>
-            Un pequeño jardín para ti 🌻
+            Bienvenida a tu pequeño jardín 🌻
         </h2>
 
         <p class="mensaje">
-
-            Porque te mereces
-            un mundo lleno de cosas bonitas.
-
+            Cada flor que ves aquí representa
+            un pequeño pensamiento que tengo sobre ti.
         </p>
 
-        <div id="flores"></div>
+        <div
+            class="flores"
+            id="flores"
+        ></div>
 
-        <div class="fraseJardin">
-
-            Y cada flor tiene un poquito
-            de cariño para ti...
-
-        </div>
+        <p class="fraseJardin">
+            Y aunque pueda llenar una pantalla de flores...
+            <br>
+            nunca serían suficientes. 💛
+        </p>
 
         <button
-            class="botonCarta"
+            class="boton botonCarta"
             id="botonCarta"
         >
-
             Tengo algo más para ti 💌
-
         </button>
 
     </section>
 
 
 
-    <!-- =================================
+    <!-- ================================
          CARTA
-    ================================== -->
+    ================================= -->
 
     <section
         class="cartaSeccion"
@@ -116,12 +110,19 @@
 
         <div class="luzCarta"></div>
 
+
+        <h2 class="tituloCarta">
+            Una carta para ti 💌
+        </h2>
+
+
         <div
             class="sobre"
             id="sobre"
         >
 
             <div class="tapa"></div>
+
 
             <div class="carta">
 
@@ -134,24 +135,32 @@
                 </h2>
 
                 <p>
-                    Quería regalarte algo diferente
-                    este día.
+                    No sé exactamente en qué momento
+                    te convertiste en alguien tan especial
+                    para mí.
                 </p>
 
                 <p>
-                    Tal vez estas flores sean digitales,
-                    pero cada una representa un poquito
-                    del cariño que siento por ti.
+                    Pero sé que desde que llegaste,
+                    hay momentos que se sienten
+                    mucho más bonitos.
                 </p>
 
                 <p>
-                    Gracias por estar en mi vida,
-                    por cada momento que compartimos
-                    y por hacer mis días más especiales.
+                    Quería regalarte algo diferente,
+                    algo que pudieras abrir y descubrir
+                    poco a poco.
+                </p>
+
+                <p>
+                    Tal vez este pequeño jardín
+                    no sea perfecto...
+                    pero cada detalle fue hecho pensando en ti.
                 </p>
 
                 <p class="firma">
-                    Con mucho amor 💛
+                    Con mucho cariño,<br>
+                    alguien que piensa mucho en ti 💛
                 </p>
 
             </div>
@@ -159,77 +168,80 @@
         </div>
 
 
-        <p class="instruccion" id="instruccion">
-
+        <p
+            class="instruccion"
+            id="instruccion"
+        >
             Toca el sobre para abrirlo 💌
-
         </p>
 
 
         <button
-            class="botonContinuar"
+            class="boton botonContinuar"
             id="botonContinuar"
         >
-
-            Continuar ✨
-
+            Quiero seguir 💛
         </button>
 
     </section>
 
 
 
-    <!-- =================================
+    <!-- ================================
          MENSAJES
-    ================================== -->
+    ================================= -->
 
     <section
         class="mensajesSeccion"
         id="mensajesSeccion"
     >
 
-        <div class="estrellasMensajes"></div>
+        <div class="brilloMensajes"></div>
 
         <p class="pequeno">
-            Solo algunas cosas que quiero decirte...
+            Y ahora...
         </p>
 
         <h2>
-            Para que nunca olvides 💛
+            Algunas cosas que quiero decirte
         </h2>
+
 
         <div
             class="mensajeGrande"
             id="mensajeGrande"
+        ></div>
+
+
+        <div
+            class="contador"
+            id="contador"
         >
+            1 / 6
         </div>
 
-        <div class="contador" id="contador">
-            1 / 7
-        </div>
 
-        <button id="botonMensaje">
-
+        <button
+            class="boton"
+            id="botonMensaje"
+        >
             Siguiente 💛
-
         </button>
 
     </section>
 
 
 
-    <!-- =================================
-         ESCENA FINAL
-    ================================== -->
+    <!-- ================================
+         FINAL
+    ================================= -->
 
     <section
         class="final"
         id="final"
     >
 
-        <div id="petalos"></div>
-
-        <div class="estrellasFinales"></div>
+        <div class="cielo"></div>
 
         <div class="luna">
             🌙
@@ -237,103 +249,87 @@
 
         <div class="haloLuna"></div>
 
-        <p class="pequeno finalPequeno">
-            Y todavía tengo una última cosa que decirte...
-        </p>
+
+        <div
+            id="petalos"
+        ></div>
+
 
         <h2>
-            Este jardín es para ti 🌻
+            Y si llegaste hasta aquí...
         </h2>
 
+
         <p class="textoFinal">
-
-            Porque aunque las flores sean digitales,
-            todo lo que quiero decirte es real.
-
+            quiero que sepas que este pequeño lugar
+            fue creado especialmente para ti.
         </p>
 
-        <div id="floresFinales"></div>
+
+        <div
+            class="floresFinales"
+            id="floresFinales"
+        ></div>
+
 
         <button
+            class="boton botonSecreto"
             id="botonSecreto"
         >
-
-            Hay algo más... 🔐
-
+            Hay una última sorpresa... 👀
         </button>
 
     </section>
 
 
 
-    <!-- =================================
-         SORPRESA SECRETA
-    ================================== -->
+    <!-- ================================
+         SORPRESA
+    ================================= -->
 
     <section
         class="secreto"
         id="secreto"
     >
 
-        <div class="corazonesSecretos">
-            💛 ✨ 💛 ✨ 💛
+        <div id="corazonesSecretos"></div>
+
+
+        <div class="granCorazon">
+            💛
         </div>
 
-        <div class="secretoContenido">
 
-            <div class="granCorazon">
-                💛
-            </div>
+        <h2>
+            Si pudiera regalarte algo más...
+        </h2>
 
-            <p class="pequeno">
-                Este último mensaje es solo para ti
-            </p>
 
-            <h2>
-                Mi último mensaje para ti
-            </h2>
+        <p>
+            te regalaría la posibilidad de verte
+            como yo te veo.
+        </p>
 
-            <p>
 
-                Si llegaste hasta aquí,
-                quiero que recuerdes algo:
+        <p>
+            Porque quizá no te das cuenta,
+            pero tienes una forma muy bonita
+            de hacer especiales las cosas pequeñas.
+        </p>
 
-            </p>
 
-            <p class="mensajeFinal">
+        <p class="mensajeFinal">
+            Gracias por aparecer en mi vida April :D 💛
+        </p>
 
-                Entre tantas personas,
-                tantas historias
-                y tantos caminos...
 
-                <br><br>
-
-                me alegra muchísimo
-                que nuestros caminos
-                se hayan encontrado.
-
-                <br><br>
-
-                Y si pudiera guardar
-                un momento de todo esto,
-                elegiría todos los momentos
-                que he compartido contigo.
-
-                <br><br>
-
-                Te amo mushishishimo mi April. 💛
-
-            </p>
-
-            <div class="floresSecretas">
-
-                🌻 🌻 🌻
-
-            </div>
-
+        <div class="floresSecretas">
+            🌻 🌼 🌻 🌼 🌻
         </div>
+
 
     </section>
+
 
 
     <script src="script.js"></script>

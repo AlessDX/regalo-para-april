@@ -1,9 +1,6 @@
-// =================================
-// ELEMENTOS
-// =================================
-
-const botonComenzar =
-    document.getElementById("botonComenzar");
+/* =================================
+   ELEMENTOS
+================================= */
 
 const inicio =
     document.getElementById("inicio");
@@ -11,14 +8,34 @@ const inicio =
 const jardin =
     document.getElementById("jardin");
 
-const flores =
-    document.getElementById("flores");
+const cartaSeccion =
+    document.getElementById("cartaSeccion");
+
+const mensajesSeccion =
+    document.getElementById("mensajesSeccion");
+
+const final =
+    document.getElementById("final");
+
+const secreto =
+    document.getElementById("secreto");
+
+
+const botonInicio =
+    document.getElementById("botonInicio");
 
 const botonCarta =
     document.getElementById("botonCarta");
 
-const cartaSeccion =
-    document.getElementById("cartaSeccion");
+const botonContinuar =
+    document.getElementById("botonContinuar");
+
+const botonMensaje =
+    document.getElementById("botonMensaje");
+
+const botonSecreto =
+    document.getElementById("botonSecreto");
+
 
 const sobre =
     document.getElementById("sobre");
@@ -26,43 +43,36 @@ const sobre =
 const instruccion =
     document.getElementById("instruccion");
 
-const botonContinuar =
-    document.getElementById("botonContinuar");
 
-const mensajesSeccion =
-    document.getElementById("mensajesSeccion");
+/* =================================
+   MOSTRAR SECCIÓN
+================================= */
 
-const mensajeGrande =
-    document.getElementById("mensajeGrande");
+function mostrarSeccion(seccion) {
 
-const botonMensaje =
-    document.getElementById("botonMensaje");
+    inicio.style.display = "none";
 
-const contador =
-    document.getElementById("contador");
+    jardin.style.display = "none";
 
-const final =
-    document.getElementById("final");
+    cartaSeccion.style.display = "none";
 
-const petalos =
-    document.getElementById("petalos");
+    mensajesSeccion.style.display = "none";
 
-const floresFinales =
-    document.getElementById("floresFinales");
+    final.style.display = "none";
 
-const botonSecreto =
-    document.getElementById("botonSecreto");
-
-const secreto =
-    document.getElementById("secreto");
+    secreto.style.display = "none";
 
 
+    seccion.style.display = "flex";
 
-// =================================
-// ABRIR REGALO
-// =================================
+}
 
-botonComenzar.addEventListener(
+
+/* =================================
+   PRIMER BOTÓN
+================================= */
+
+botonInicio.addEventListener(
     "click",
     function () {
 
@@ -80,53 +90,106 @@ botonComenzar.addEventListener(
 );
 
 
-
-// =================================
-// CREAR FLORES
-// =================================
+/* =================================
+   CREAR FLORES
+================================= */
 
 function crearFlores() {
 
-    for (
-        let i = 0;
-        i < 18;
-        i++
-    ) {
+    const contenedor =
+        document.getElementById(
+            "flores"
+        );
 
-        const flor =
-            document.createElement("div");
+    contenedor.innerHTML = "";
 
-        flor.classList.add("flor");
 
-        flor.textContent =
-            "🌻";
+    const flores = [
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌻",
+        "🌼"
+    ];
 
-        flor.style.left =
-            Math.random() * 90 + "%";
 
-        flor.style.bottom =
-            Math.random() * 12 + "%";
+    flores.forEach(
+        function (flor, index) {
 
-        flor.style.animationDelay =
-            Math.random() * 2 + "s";
+            const elemento =
+                document.createElement(
+                    "div"
+                );
 
-        const tamaño =
-            38 + Math.random() * 35;
 
-        flor.style.fontSize =
-            tamaño + "px";
+            elemento.className =
+                "flor";
 
-        flores.appendChild(flor);
 
-    }
+            elemento.textContent =
+                flor;
+
+
+            const posiciones = [
+                [8, 25],
+                [22, 15],
+                [40, 25],
+                [60, 18],
+                [78, 28],
+                [90, 15],
+                [15, 48],
+                [32, 42],
+                [52, 50],
+                [72, 44],
+                [87, 52],
+                [5, 70],
+                [25, 75],
+                [45, 68],
+                [65, 75],
+                [82, 68],
+                [15, 88],
+                [75, 88]
+            ];
+
+
+            elemento.style.left =
+                posiciones[index][0] + "%";
+
+
+            elemento.style.top =
+                posiciones[index][1] + "%";
+
+
+            elemento.style.animationDelay =
+                (index * 0.15) + "s";
+
+
+            contenedor.appendChild(
+                elemento
+            );
+
+        }
+    );
 
 }
 
 
-
-// =================================
-// BRILLOS
-// =================================
+/* =================================
+   BRILLOS
+================================= */
 
 function crearBrillos() {
 
@@ -135,38 +198,50 @@ function crearBrillos() {
             "brillosJardin"
         );
 
+
     for (
         let i = 0;
-        i < 25;
+        i < 18;
         i++
     ) {
 
         const brillo =
-            document.createElement("div");
+            document.createElement(
+                "span"
+            );
+
 
         brillo.textContent =
             "✨";
 
+
         brillo.style.position =
             "absolute";
 
+
         brillo.style.left =
-            Math.random() * 100 + "%";
+            Math.random() * 95 + "%";
+
 
         brillo.style.top =
             Math.random() * 90 + "%";
 
+
         brillo.style.fontSize =
-            10 + Math.random() * 15 + "px";
+            (10 + Math.random() * 15)
+            + "px";
+
 
         brillo.style.opacity =
-            0.3 + Math.random() * 0.7;
+            0.3 +
+            Math.random() * 0.7;
+
 
         brillo.style.animation =
-            "aparecerBrillo 2s infinite alternate";
+            "latido " +
+            (1.5 + Math.random() * 2)
+            + "s infinite";
 
-        brillo.style.animationDelay =
-            Math.random() * 3 + "s";
 
         contenedor.appendChild(
             brillo
@@ -177,10 +252,9 @@ function crearBrillos() {
 }
 
 
-
-// =================================
-// IR A LA CARTA
-// =================================
+/* =================================
+   IR A LA CARTA
+================================= */
 
 botonCarta.addEventListener(
     "click",
@@ -192,18 +266,38 @@ botonCarta.addEventListener(
         cartaSeccion.style.display =
             "block";
 
+        window.scrollTo(
+            0,
+            0
+        );
+
     }
 );
 
 
-
-// =================================
-// ABRIR SOBRE
-// =================================
+/* =================================
+   ABRIR SOBRE
+================================= */
 
 sobre.addEventListener(
     "click",
-    function () {
+    function (evento) {
+
+        /*
+        Si el usuario toca el botón
+        de continuar, no cerramos
+        el sobre.
+        */
+
+        if (
+            evento.target ===
+            botonContinuar
+        ) {
+
+            return;
+
+        }
+
 
         sobre.classList.toggle(
             "abierto"
@@ -219,6 +313,7 @@ sobre.addEventListener(
             instruccion.textContent =
                 "La preparé especialmente para ti... 💛";
 
+
             botonContinuar.classList.add(
                 "visible"
             );
@@ -227,6 +322,7 @@ sobre.addEventListener(
 
             instruccion.textContent =
                 "Toca el sobre para abrirlo 💌";
+
 
             botonContinuar.classList.remove(
                 "visible"
@@ -238,22 +334,27 @@ sobre.addEventListener(
 );
 
 
-
-// =================================
-// CONTINUAR
-// =================================
+/* =================================
+   CONTINUAR DESDE CARTA
+================================= */
 
 botonContinuar.addEventListener(
     "click",
-    function () {
+    function (evento) {
+
+        evento.stopPropagation();
+
 
         cartaSeccion.style.display =
             "none";
 
-        mensajesSeccion.style.display =
-            "block";
 
-        numeroMensaje = 0;
+        mensajesSeccion.style.display =
+            "flex";
+
+
+        mensajeActual = 0;
+
 
         mostrarMensaje();
 
@@ -261,32 +362,40 @@ botonContinuar.addEventListener(
 );
 
 
-
-// =================================
-// MENSAJES
-// =================================
+/* =================================
+   MENSAJES
+================================= */
 
 const mensajes = [
 
-    "Gracias por llegar a mi vida. 💛",
+    "Me gusta la forma en que haces especiales incluso los momentos más simples. 💛",
 
-    "Me encanta compartir momentos contigo.",
+    "Hay personas que llegan y simplemente hacen que todo se sienta un poquito mejor.",
 
-    "Tu sonrisa puede cambiar completamente mi día.",
+    "Tu sonrisa tiene una manera muy bonita de quedarse en la memoria. 🌻",
 
-    "Contigo, hasta los momentos más simples se vuelven especiales.",
+    "Espero que nunca olvides lo especial que eres.",
 
-    "Hay muchas cosas que quizá no digo lo suficiente...",
+    "Si pudiera guardar algunos momentos para siempre, definitivamente guardaría los momentos contigo.",
 
-    "Pero quiero que sepas que eres muy importante para mí.",
-
-    "Y hoy quería recordártelo de una manera diferente. 🌻"
+    "Y este pequeño jardín es solamente una forma de decirte: gracias por ser tú. 💛"
 
 ];
 
 
-let numeroMensaje = 0;
+let mensajeActual = 0;
 
+
+const mensajeGrande =
+    document.getElementById(
+        "mensajeGrande"
+    );
+
+
+const contador =
+    document.getElementById(
+        "contador"
+    );
 
 
 function mostrarMensaje() {
@@ -294,40 +403,48 @@ function mostrarMensaje() {
     mensajeGrande.style.animation =
         "none";
 
+
     void mensajeGrande.offsetWidth;
 
+
     mensajeGrande.style.animation =
-        "aparecerMensaje 0.8s ease";
+        "aparecer 0.8s";
+
 
     mensajeGrande.textContent =
-        mensajes[numeroMensaje];
+        mensajes[mensajeActual];
+
 
     contador.textContent =
-        (numeroMensaje + 1)
+        (mensajeActual + 1)
         + " / "
         + mensajes.length;
 
 }
 
 
-
-// =================================
-// SIGUIENTE MENSAJE
-// =================================
-
 botonMensaje.addEventListener(
     "click",
     function () {
 
-        numeroMensaje++;
+        mensajeActual++;
 
 
         if (
-            numeroMensaje >=
+            mensajeActual >=
             mensajes.length
         ) {
 
-            mostrarFinal();
+            mensajesSeccion.style.display =
+                "none";
+
+
+            final.style.display =
+                "block";
+
+
+            comenzarFinal();
+
 
             return;
 
@@ -340,127 +457,107 @@ botonMensaje.addEventListener(
 );
 
 
+/* =================================
+   FINAL
+================================= */
 
-// =================================
-// ESCENA FINAL
-// =================================
+function comenzarFinal() {
 
-function mostrarFinal() {
-
-    mensajesSeccion.style.display =
-        "none";
-
-    final.style.display =
-        "block";
+    crearPetalos();
 
     crearFloresFinales();
 
-    iniciarLluviaPetalos();
+}
+
+
+/* =================================
+   PETALOS / CORAZONES
+================================= */
+
+function crearPetalos() {
+
+    const contenedor =
+        document.getElementById(
+            "petalos"
+        );
+
+
+    setInterval(
+        function () {
+
+            const corazon =
+                document.createElement(
+                    "div"
+                );
+
+
+            corazon.className =
+                "corazonCaido";
+
+
+            corazon.textContent =
+                Math.random() > 0.4
+                    ? "💛"
+                    : "✨";
+
+
+            corazon.style.left =
+                Math.random() * 100 + "%";
+
+
+            corazon.style.fontSize =
+                (12 + Math.random() * 14)
+                + "px";
+
+
+            corazon.style.animationDuration =
+                (4 + Math.random() * 4)
+                + "s";
+
+
+            contenedor.appendChild(
+                corazon
+            );
+
+
+            setTimeout(
+                function () {
+
+                    corazon.remove();
+
+                },
+                8000
+            );
+
+
+        },
+        350
+    );
 
 }
 
 
-
-// =================================
-// FLORES FINALES
-// =================================
+/* =================================
+   FLORES FINALES
+================================= */
 
 function crearFloresFinales() {
 
-    for (
-        let i = 0;
-        i < 40;
-        i++
-    ) {
-
-        const flor =
-            document.createElement("div");
-
-        flor.classList.add(
-            "florFinal"
+    const contenedor =
+        document.getElementById(
+            "floresFinales"
         );
 
-        flor.textContent =
-            "🌻";
 
-        flor.style.left =
-            Math.random() * 95 + "%";
-
-        flor.style.fontSize =
-            28 + Math.random() * 38 + "px";
-
-        flor.style.animationDelay =
-            Math.random() * 3 + "s";
-
-        floresFinales.appendChild(
-            flor
-        );
-
-    }
+    contenedor.innerHTML =
+        "🌻 🌼 🌻 🌼 🌻";
 
 }
 
 
-
-// =================================
-// LLUVIA DE PÉTALOS
-// =================================
-
-function iniciarLluviaPetalos() {
-
-    setInterval(
-        crearPetalo,
-        280
-    );
-
-}
-
-
-
-function crearPetalo() {
-
-    const petalo =
-        document.createElement("div");
-
-    petalo.classList.add(
-        "petalo"
-    );
-
-    petalo.textContent =
-        Math.random() > 0.5
-        ? "💛"
-        : "✨";
-
-    petalo.style.left =
-        Math.random() * 100 + "%";
-
-    petalo.style.animationDuration =
-        4 + Math.random() * 5 + "s";
-
-    petalo.style.fontSize =
-        12 + Math.random() * 18 + "px";
-
-    petalos.appendChild(
-        petalo
-    );
-
-
-    setTimeout(
-        function () {
-
-            petalo.remove();
-
-        },
-        9000
-    );
-
-}
-
-
-
-// =================================
-// SORPRESA SECRETA
-// =================================
+/* =================================
+   SORPRESA FINAL
+================================= */
 
 botonSecreto.addEventListener(
     "click",
@@ -469,66 +566,79 @@ botonSecreto.addEventListener(
         final.style.display =
             "none";
 
+
         secreto.style.display =
             "flex";
 
-        lanzarCorazones();
+
+        crearCorazonesSecretos();
+
+        window.scrollTo(
+            0,
+            0
+        );
 
     }
 );
 
 
+/* =================================
+   CORAZONES SECRETOS
+================================= */
 
-// =================================
-// CORAZONES FINALES
-// =================================
+function crearCorazonesSecretos() {
 
-function lanzarCorazones() {
-
-    for (
-        let i = 0;
-        i < 20;
-        i++
-    ) {
-
-        const corazon =
-            document.createElement("div");
-
-        corazon.textContent =
-            "💛";
-
-        corazon.style.position =
-            "absolute";
-
-        corazon.style.left =
-            Math.random() * 100 + "%";
-
-        corazon.style.bottom =
-            "-30px";
-
-        corazon.style.fontSize =
-            15 + Math.random() * 25 + "px";
-
-        corazon.style.zIndex =
-            "3";
-
-        corazon.style.animation =
-            "subirCorazon 4s linear forwards";
-
-        secreto.appendChild(
-            corazon
+    const contenedor =
+        document.getElementById(
+            "corazonesSecretos"
         );
 
 
-        setTimeout(
-            function () {
+    setInterval(
+        function () {
 
-                corazon.remove();
+            const corazon =
+                document.createElement(
+                    "div"
+                );
 
-            },
-            4500
-        );
 
-    }
+            corazon.className =
+                "corazonSecreto";
+
+
+            corazon.textContent =
+                Math.random() > 0.5
+                    ? "💛"
+                    : "✨";
+
+
+            corazon.style.left =
+                Math.random() * 100 + "%";
+
+
+            corazon.style.animationDuration =
+                (4 + Math.random() * 3)
+                + "s";
+
+
+            contenedor.appendChild(
+                corazon
+            );
+
+
+            setTimeout(
+                function () {
+
+                    corazon.remove();
+
+                },
+                7000
+            );
+
+
+        },
+        500
+    );
 
 }
